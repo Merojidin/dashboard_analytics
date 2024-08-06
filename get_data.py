@@ -14,5 +14,5 @@ def get_data_xlsx(csv_name):
     file_path = f'source/{csv_name}.xlsx'
     df = pd.read_excel(file_path)
     df.columns = [col.lower().replace(' ', '').replace('-', '') for col in df.columns]
-    df = df.applymap(lambda x: x.strip().replace(',', '') if isinstance(x, str) else x)
+    df = df.apply(lambda col: col.map(lambda x: x.strip().replace(',', '') if isinstance(x, str) else x))
     return df
