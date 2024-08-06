@@ -262,7 +262,7 @@ def update_table(start_date, end_date, selected_categories):
     return sales.to_dict('records')
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 10000))
+    port = int(os.environ.get('PORT', 5000))
     app.run_server(debug=True, host='0.0.0.0', port=port)
 
 
